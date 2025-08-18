@@ -93,12 +93,12 @@
       <section class="card" aria-labelledby="info-ttl">
         <header class="card__hdr"><h2 id="info-ttl" class="card__title">Informações</h2></header>
         <div class="card__body" style="display:grid;gap:1.34rem">
-          <div class="events__row"><span>Versão</span><span class="pill">97d+99i</span></div>
-          <div class="events__row"><span>Experiência</span><span class="pill">100x</span></div>
-          <div class="events__row"><span>Drop</span><span class="pill">30%</span></div>
-          <div class="events__row"><span>Total de Contas</span><span class="pill">89</span></div>
-          <div class="events__row"><span>Total de Personagens</span><span class="pill">21</span></div>
-          <div class="events__row"><span>Total de Guilds</span><span class="pill">5</span></div>
+          <div class="info__row"><span>Versão</span><span class="pill">97d+99i</span></div>
+          <div class="info__row"><span>Experiência</span><span class="pill">100x</span></div>
+          <div class="info__row"><span>Drop</span><span class="pill">30%</span></div>
+          <div class="info__row"><span>Total de Contas</span><span class="pill">89</span></div>
+          <div class="info__row"><span>Total de Personagens</span><span class="pill">21</span></div>
+          <div class="info__row"><span>Total de Guilds</span><span class="pill">5</span></div>
         </div>
       </section>
     </div>
@@ -131,6 +131,7 @@
 
         <!-- Slider CSS TOP 1-3 (auto-rotação) -->
         <div class="slider" role="region" aria-label="Top 1-3 dos Rankings">
+          <button class="slider__toggle" type="button" aria-label="Pause animation">Pause</button>
           <div class="slides">
             <!-- Slide 1: Blood Castle -->
             <div class="slide">
@@ -226,7 +227,7 @@
           <a class="rank-card" href="#downloads"><strong>Downloads</strong><small>Cliente, patch, anti-cheat</small></a>
           <a class="rank-card" href="#regras"><strong>Regras</strong><small>Jogabilidade e conduta</small></a>
           <a class="rank-card" href="#discord"><strong>Discord</strong><small>Suporte e comunidade</small></a>
-          <div class="events__row"><span>Dica do Dia</span><span class="pill">Use /post com moderação</span></div>
+          <div class="guide__row"><span>Dica do Dia</span><span class="pill">Use /post com moderação</span></div>
         </div>
       </section>
     </div>
@@ -245,6 +246,7 @@
       const slides = slider.querySelectorAll('.slide');
       const dots = slider.querySelectorAll('.dot');
       const slidesContainer = slider.querySelector('.slides');
+      const toggleBtn = slider.querySelector('.slider__toggle');
       const duration = parseFloat(getComputedStyle(slidesContainer).animationDuration) * 1000;
       const interval = duration / slides.length;
       let index = 0;
@@ -254,6 +256,20 @@
       }
       activate();
       setInterval(activate, interval);
+      if(toggleBtn){
+        toggleBtn.addEventListener('click', ()=>{
+          const paused = slidesContainer.style.animationPlayState === 'paused';
+          if(paused){
+            slidesContainer.style.animationPlayState = '';
+            toggleBtn.setAttribute('aria-label','Pause animation');
+            toggleBtn.textContent = 'Pause';
+          }else{
+            slidesContainer.style.animationPlayState = 'paused';
+            toggleBtn.setAttribute('aria-label','Play animation');
+            toggleBtn.textContent = 'Play';
+          }
+        });
+      }
     });
   </script>
 </body>
