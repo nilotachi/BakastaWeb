@@ -109,6 +109,12 @@ a{color:inherit;text-decoration:none}
 .dot{width:10px;height:10px;border-radius:999px;border:1px solid var(--border);background:#0b0b0e;opacity:.4;transition:opacity .3s,background .3s}
 .dot.active{background:var(--accent);opacity:1}
 .slider:hover .slides{animation-play-state:paused}
+.slider:focus-within .slides{animation-play-state:paused}
+.slider__toggle{
+  position:absolute;
+  width:1px;height:1px;margin:-1px;border:0;padding:0;
+  clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap
+}
 
 /* ornament / boundary cues for slider */
 .slider::before{content:"";position:absolute;inset:0;pointer-events:none;background:
