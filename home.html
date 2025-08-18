@@ -145,7 +145,6 @@
                   </ul>
                 </div>
               </div>
-              <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             </div>
 
             <!-- Slide 2: Devil Square -->
@@ -161,7 +160,6 @@
                   </ul>
                 </div>
               </div>
-              <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             </div>
 
             <!-- Slide 3: PK -->
@@ -177,7 +175,6 @@
                   </ul>
                 </div>
               </div>
-              <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             </div>
 
             <!-- Slide 4: Resets -->
@@ -193,9 +190,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             </div>
           </div>
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
       </div>
     </section>
@@ -241,5 +238,23 @@
       <p class="mt-3">Layout leve. Substitua textos e números por conteúdo dinâmico quando integrar ao backend.</p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const slider = document.querySelector('.slider');
+      if(!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const dots = slider.querySelectorAll('.dot');
+      const slidesContainer = slider.querySelector('.slides');
+      const duration = parseFloat(getComputedStyle(slidesContainer).animationDuration) * 1000;
+      const interval = duration / slides.length;
+      let index = 0;
+      function activate(){
+        dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+        index = (index + 1) % dots.length;
+      }
+      activate();
+      setInterval(activate, interval);
+    });
+  </script>
 </body>
 </html>
