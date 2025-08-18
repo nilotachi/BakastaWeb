@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Header ---------- */
 .topbar{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.6));backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--border)}
-.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.5px}
 .brand__badge{width:36px;aspect-ratio:1;border-radius:8px;background:radial-gradient(circle at 30% 30%, #7f1d1d, #111);border:1px solid var(--border);display:grid;place-items:center}
 .menu{display:flex;gap:.75rem;flex-wrap:wrap}
@@ -100,7 +100,7 @@ a{color:inherit;text-decoration:none}
 .slider{position:relative;margin-top:1rem;border:1px dashed var(--border);border-radius:.6rem;overflow:hidden;display:flex;flex-direction:column;min-height:420px;flex:1}
 .slider.glow{ border: var(--glow-size) solid transparent; /* força o gradiente da classe .glow */ }
 @media (max-width:640px){.slider{min-height:280px}}
-.slides{display:flex;width:400%;height:100%;will-change:transform;animation:autoroll4 15s linear infinite}
+.slides{display:flex;width:400%;height:100%;flex:1;will-change:transform;animation:autoroll4 15s linear infinite}
 .slide{flex:0 0 100%;position:relative;display:flex;flex-direction:column;height:100%;background:linear-gradient(180deg,#15151d,#0b0b0e);border-right:1px solid var(--border);box-shadow:inset 1px 0 0 rgba(255,255,255,.03), inset -1px 0 0 rgba(0,0,0,.5)}
 /* imagem: default + custom override por inline style */
 .slide__img{position:absolute;inset:0;background-position:center;background-size:cover;opacity:.45;z-index:0;
@@ -135,8 +135,6 @@ a{color:inherit;text-decoration:none}
   linear-gradient(90deg, rgba(11,11,14,1), rgba(11,11,14,0) 10%, rgba(11,11,14,0) 90%, rgba(11,11,14,1)),
   linear-gradient(180deg, transparent 0%, rgba(11,11,14,0.8) 100%);z-index:2}
 
-.slider::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--accent);animation:progressBar 15s linear infinite;z-index:2}
-@keyframes progressBar{0%{width:0}100%{width:100%}}
 
 /* legend header with icon (default placeholder) */
 .legend__head{display:flex;align-items:center;gap:.6rem}
