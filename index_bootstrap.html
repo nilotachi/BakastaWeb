@@ -136,6 +136,7 @@
 
             <!-- Slider -->
             <div class="slider glow" role="region" aria-label="Top 1-3 dos Rankings">
+              <button class="slider__toggle" type="button" aria-label="Pause animation">Pause</button>
               <div class="slides">
                 <!-- Slide 1: Blood Castle -->
                 <div class="slide">
@@ -255,6 +256,7 @@
       const slides = slider.querySelectorAll('.slide');
       const dots = slider.querySelectorAll('.dot');
       const slidesContainer = slider.querySelector('.slides');
+      const toggleBtn = slider.querySelector('.slider__toggle');
       const duration = parseFloat(getComputedStyle(slidesContainer).animationDuration) * 1000;
       const interval = duration / slides.length;
       let index = 0;
@@ -264,6 +266,20 @@
       }
       activate();
       setInterval(activate, interval);
+      if(toggleBtn){
+        toggleBtn.addEventListener('click', ()=>{
+          const paused = slidesContainer.style.animationPlayState === 'paused';
+          if(paused){
+            slidesContainer.style.animationPlayState = '';
+            toggleBtn.setAttribute('aria-label','Pause animation');
+            toggleBtn.textContent = 'Pause';
+          }else{
+            slidesContainer.style.animationPlayState = 'paused';
+            toggleBtn.setAttribute('aria-label','Play animation');
+            toggleBtn.textContent = 'Play';
+          }
+        });
+      }
     });
   </script>
 </body>
