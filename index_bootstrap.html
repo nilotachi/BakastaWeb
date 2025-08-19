@@ -265,6 +265,17 @@
       userMenu?.style.display = 'block';
       loginSection?.style.setProperty('display', 'none');
       userPanel?.style.setProperty('display', 'block');
+
+      [logoutLink, logoutBtn].forEach((el) => {
+        el?.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('loggedIn');
+          window.location.href = 'index_bootstrap.html';
+        });
+      });
+    } else {
+      userMenu?.remove();
+    }
     }
     [logoutLink, logoutBtn].forEach((el) => {
       el?.addEventListener('click', (e) => {
