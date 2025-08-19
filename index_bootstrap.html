@@ -94,7 +94,7 @@
       <!-- Direita: stack -->
       <div class="col-lg-4 d-flex">
         <div class="d-flex flex-column gap-3 w-100 h-100">
-          <section class="card card--compact" aria-labelledby="login-ttl">
+          <section id="loginSection" class="card card--compact" aria-labelledby="login-ttl">
             <header class="card__hdr"><h2 id="login-ttl" class="card__title m-0">Login</h2></header>
             <div class="card__body">
               <form class="form" action="#" method="post" autocomplete="off" novalidate>
@@ -110,6 +110,16 @@
                 <button class="btn btn--secondary" type="button">Cadastrar</button>
                 <p class="hint">⚠️ Ilustrativo. Ao implementar, use HTTPS, CSRF, rate limit e hashing forte (Argon2/BCrypt).</p>
               </form>
+            </div>
+          </section>
+
+          <section id="userPanel" class="card card--compact" aria-labelledby="user-ttl">
+            <header class="card__hdr"><h2 id="user-ttl" class="card__title m-0">Bem-vindo</h2></header>
+            <div class="card__body d-grid gap-2">
+              <p>Você já está logado.</p>
+              <a class="btn btn--primary" href="usuario.html">Minha Conta</a>
+              <a class="btn btn--secondary" href="usuario.html#senha">Mudar Senha</a>
+              <button class="btn" type="button" id="logoutBtn">Sair</button>
             </div>
           </section>
 
@@ -247,15 +257,24 @@
       window.location.href = 'usuario.html';
     });
     const userMenu = document.getElementById('userMenu');
+    const loginSection = document.getElementById('loginSection');
+    const userPanel = document.getElementById('userPanel');
     const logoutLink = document.getElementById('logoutLink');
-    if (localStorage.getItem('loggedIn') && userMenu) {
-      userMenu.style.display = 'block';
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (localStorage.getItem('loggedIn')) {
+      userMenu?.style.display = 'block';
+      loginSection?.style.setProperty('display', 'none');
+      userPanel?.style.setProperty('display', 'block');
+      [logoutLink, logoutBtn].forEach((el) => {
+        el?.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.removeItem('loggedIn');
+          window.location.href = 'index_bootstrap.html';
+        });
+      });
+    } else {
+      userMenu?.remove();
     }
-    logoutLink?.addEventListener('click', (e) => {
-      e.preventDefault();
-      localStorage.removeItem('loggedIn');
-      window.location.href = 'index_bootstrap.html';
-    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

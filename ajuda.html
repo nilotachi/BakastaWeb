@@ -69,14 +69,16 @@
   <script>
     const userMenu = document.getElementById('userMenu');
     const logoutLink = document.getElementById('logoutLink');
-    if (localStorage.getItem('loggedIn') && userMenu) {
-      userMenu.style.display = 'block';
+    if (localStorage.getItem('loggedIn')) {
+      userMenu?.style.display = 'block';
+      logoutLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('loggedIn');
+        window.location.href = 'index_bootstrap.html';
+      });
+    } else {
+      userMenu?.remove();
     }
-    logoutLink?.addEventListener('click', (e) => {
-      e.preventDefault();
-      localStorage.removeItem('loggedIn');
-      window.location.href = 'index_bootstrap.html';
-    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

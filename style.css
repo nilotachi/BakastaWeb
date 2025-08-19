@@ -32,9 +32,6 @@ a{color:inherit;text-decoration:none}
 .menu .dropdown> a{display:flex;align-items:center}
 .menu .dropdown{position:relative;display:flex;align-items:center}
 /* seta menor e alinhada */
-.menu .dropdown-toggle::after{content:'\25BE';font-size:.5em;margin-left:.25rem}
-=======
-.menu .dropdown{position:relative}
 .menu .dropdown-toggle::after{content:'\25BE';font-size:.6em;margin-left:.25rem}
 
 .menu .dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#151520;border:1px solid var(--border);border-radius:.5rem;min-width:150px;padding:.5rem 0;z-index:100}
@@ -42,6 +39,7 @@ a{color:inherit;text-decoration:none}
 .menu .dropdown-menu a{padding:.5rem .75rem;white-space:nowrap}
 .menu .dropdown-menu a:hover{background:#14141b}
 #userMenu{display:none}
+#userPanel{display:none}
 
 @media (max-width:480px){
   .nav{height:auto;flex-direction:column;align-items:flex-start;padding-block:.5rem}
