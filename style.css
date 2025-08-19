@@ -98,55 +98,12 @@ a{color:inherit;text-decoration:none}
 @media (min-width:640px){.rank-grid{grid-template-columns:1fr 1fr}}
 .rank-card{background:var(--panel2);border:1px solid var(--border);border-radius:.8rem;padding:.9rem;display:grid;gap:.25rem;transition:border-color .2s,background-color .2s}
 .rank-card small{color:var(--muted)}
-
-/* ---------- Slider CSS Top 1-3 com auto-rotação ---------- */
-.slider{position:relative;margin-top:1rem;border:1px dashed var(--border);border-radius:.6rem;overflow:hidden;display:flex;flex-direction:column;min-height:420px;flex:1}
-.slider.glow{ border: var(--glow-size) solid transparent; /* força o gradiente da classe .glow */ }
-@media (max-width:640px){.slider{min-height:280px}}
-.slides{display:flex;width:400%;height:100%;flex:1;will-change:transform;animation:autoroll4 15s linear infinite}
-.slide{flex:0 0 100%;position:relative;display:flex;flex-direction:column;height:100%;background:linear-gradient(180deg,#15151d,#0b0b0e);border-right:1px solid var(--border);box-shadow:inset 1px 0 0 rgba(255,255,255,.03), inset -1px 0 0 rgba(0,0,0,.5)}
-/* imagem: default + custom override por inline style */
-.slide__img{position:absolute;inset:0;z-index:0;}
-.slide__img img{width:100%;height:100%;object-fit:contain;object-position:center}
-.legend{position:absolute;left:0;right:0;bottom:0;display:grid;gap:.35rem;padding:0 1rem 1rem;z-index:3}
-.legend__box{position:relative;background:rgba(0,0,0,.6);backdrop-filter:blur(2px);border:1px solid var(--border);border-radius:.8rem;padding:.9rem;box-shadow:0 8px 24px rgba(0,0,0,.35);max-width:780px;width:min(780px,96%);margin:0 auto;display:grid;gap:.5rem;color:var(--txt)}
-.legend__title{margin:0 0 .35rem 0;font-weight:900}
-.toplist{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
-.toplist li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.5rem}
-.toplist strong{font-weight:900}
-.toplist .name{font-weight:700}
+/* Badges de classe para rankings */
 .class-badge{display:inline-block;width:22px;height:22px;border-radius:4px;border:1px solid var(--border);background:#0b0b0e;background-size:cover;background-position:center}
-/* placeholders embutidos para classes (BK/SM/ELF/MG) */
 .class-badge.bk{background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2222%22 height=%2222%22 viewBox=%220 0 22 22%22><rect width=%2222%22 height=%2222%22 rx=%224%22 fill=%22%23171722%22/><text x=%225%22 y=%2216%22 font-size=%2210%22 fill=%22%23ffffff%22 font-family=%22Arial%22>BK</text></svg>')}
 .class-badge.sm{background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2222%22 height=%2222%22 viewBox=%220 0 22 22%22><rect width=%2222%22 height=%2222%22 rx=%224%22 fill=%22%23131d26%22/><text x=%224%22 y=%2216%22 font-size=%2210%22 fill=%22%23ffffff%22 font-family=%22Arial%22>SM</text></svg>')}
 .class-badge.elf{background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2222%22 height=%2222%22 viewBox=%220 0 22 22%22><rect width=%2222%22 height=%2222%22 rx=%224%22 fill=%22%23162318%22/><text x=%224%22 y=%2216%22 font-size=%2210%22 fill=%22%23ffffff%22 font-family=%22Arial%22>EL</text></svg>')}
 .class-badge.mg{background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2222%22 height=%2222%22 viewBox=%220 0 22 22%22><rect width=%2222%22 height=%2222%22 rx=%224%22 fill=%22%231a1a1a%22/><text x=%224%22 y=%2216%22 font-size=%2210%22 fill=%22%23ffffff%22 font-family=%22Arial%22>MG</text></svg>')}
-.dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:.4rem;z-index:5}
-.dot{width:10px;height:10px;border-radius:999px;border:1px solid var(--border);background:#0b0b0e;opacity:.4;transition:opacity .3s,background .3s}
-.dot.active{background:var(--accent);opacity:1}
-.slider:hover .slides{animation-play-state:paused}
-.slider:focus-within .slides{animation-play-state:paused}
-.slider__toggle{
-  position:absolute;
-  width:1px;height:1px;margin:-1px;border:0;padding:0;
-  clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap
-}
-
-/* ornament / boundary cues for slider */
-.slider::before{content:"";position:absolute;inset:0;pointer-events:none;background:
-  linear-gradient(90deg, rgba(11,11,14,1), rgba(11,11,14,0) 10%, rgba(11,11,14,0) 90%, rgba(11,11,14,1)),
-  linear-gradient(180deg, transparent 0%, rgba(11,11,14,0.8) 100%);z-index:2}
-
-
-/* legend header with icon (default placeholder) */
-.legend__head{display:flex;align-items:center;gap:.6rem}
-.legend__icon{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:#0b0b0e;background-size:cover;background-position:center;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="%23121218"/><path d="M7 5h10v3a4 4 0 0 1-3 3.87V14h-4v-2.13A4 4 0 0 1 7 8V5zM5 5h2v3a2 2 0 0 0 2 2v1H7a2 2 0 0 1-2-2V5zm12 0h2v4a2 2 0 0 1-2 2h-2V10a2 2 0 0 0 2-2V5z" fill="%23f59e0b"/></svg>')}
-/* Ícones por ranking */
-.legend__icon.icon-bc{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="6" fill="%231a1629"/><text x="5" y="19" font-size="12" fill="%23f1f1f1" font-family="Arial" font-weight="700">BC</text></svg>')}
-.legend__icon.icon-ds{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="6" fill="%23201818"/><text x="5" y="19" font-size="12" fill="%23f1f1f1" font-family="Arial" font-weight="700">DS</text></svg>')}
-.legend__icon.icon-pk{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="6" fill="%23181f20"/><text x="5" y="19" font-size="12" fill="%23f1f1f1" font-family="Arial" font-weight="700">PK</text></svg>')}
-.legend__icon.icon-resets{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="6" fill="%23161c12"/><text x="3" y="19" font-size="12" fill="%23f1f1f1" font-family="Arial" font-weight="700">RS</text></svg>')}
-
 /* Glow (borda iluminada) — reutilizável (sem -webkit-mask) */
 :root{ --glow-size:2px }
 .glow{
@@ -168,22 +125,6 @@ a{color:inherit;text-decoration:none}
     conic-gradient(from var(--glow-angle,0deg), #f59e0b, #ef4444, #f59e0b) border-box;
   animation: spinGlow 10s linear infinite;
 }
-
-/* Nova animação estável para 4 slides (sem "vazio" no loop) */
-@keyframes autoroll4{
-  0%,24.999%{transform:translateX(0)}
-  25%,49.999%{transform:translateX(-100%)}
-  50%,74.999%{transform:translateX(-200%)}
-  75%,99.999%{transform:translateX(-300%)}
-  100%{transform:translateX(0)}
-}
-
-/* helpers de preenchimento */
-.fillrow{display:flex;flex-direction:column;gap:1rem;min-height:0}
-.fill{flex:1;display:flex;flex-direction:column;min-height:0}
-
-/* respeita acessibilidade: se o sistema pedir menos movimento, congela o slider */
-@media (prefers-reduced-motion: reduce){ .slides{animation:none !important;} }
 
 /* ---------- Utils ---------- */
 .muted{color:var(--muted)}
