@@ -23,10 +23,27 @@
       <nav class="menu" aria-label="Menu">
         <a href="index_bootstrap.html#home">Início</a>
         <a href="downloads.html">Downloads</a>
-        <a href="#ranking">Ranking</a>
-        <a href="usuario.html">Usuário</a>
-        <a href="info.html">Informações</a>
-        <a href="#vip">Comprar VIP</a>
+        <a href="index_bootstrap.html#eventos">Eventos</a>
+        <div class="dropdown" id="userMenu">
+          <a href="#" class="dropdown-toggle">Usuário</a>
+          <div class="dropdown-menu">
+            <a href="usuario.html">Minha Conta</a>
+            <a href="usuario.html#senha">Mudar Senha</a>
+            <a href="#" id="logoutLink">Sair</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Informações</a>
+          <div class="dropdown-menu">
+            <a href="info.html">Informações Gerais</a>
+            <a href="index_bootstrap.html#ranking">Ranking</a>
+            <a href="ajuda.html">Ajuda</a>
+            <a href="regras.html">Regras</a>
+            <a href="contato.html">Contato</a>
+            <a href="https://discord.gg/servidor" target="_blank">Discord</a>
+          </div>
+        </div>
+        <a href="doacoes.html">Doações</a>
       </nav>
     </div>
   </header>
@@ -115,7 +132,7 @@
     <div class="row g-4 align-items-stretch mt-1">
       <!-- Esquerda -->
       <div class="col-lg-8 d-flex">
-        <section class="card card--compact w-100" aria-labelledby="ranks-title">
+        <section id="ranking" class="card card--compact w-100" aria-labelledby="ranks-title">
           <header class="card__hdr d-flex justify-content-between align-items-center">
             <h2 id="ranks-title" class="card__title m-0">Rankings</h2>
             <span class="pill">Hall, PK, Eventos</span>
@@ -146,7 +163,7 @@
       <!-- Direita: stack -->
       <div class="col-lg-4 d-flex">
         <div class="d-flex flex-column gap-3 w-100 h-100">
-          <section class="card" aria-labelledby="evt-ttl">
+          <section id="eventos" class="card" aria-labelledby="evt-ttl">
             <header class="card__hdr"><h2 id="evt-ttl" class="card__title m-0">Eventos</h2></header>
             <div class="card__body">
               <div class="events" style="min-height:0">
@@ -228,6 +245,16 @@
     document.getElementById('loginBtn')?.addEventListener('click', () => {
       localStorage.setItem('loggedIn', 'true');
       window.location.href = 'usuario.html';
+    });
+    const userMenu = document.getElementById('userMenu');
+    const logoutLink = document.getElementById('logoutLink');
+    if (localStorage.getItem('loggedIn') && userMenu) {
+      userMenu.style.display = 'block';
+    }
+    logoutLink?.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('loggedIn');
+      window.location.href = 'index_bootstrap.html';
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
