@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <script>
+    if (!localStorage.getItem('loggedIn')) {
+      window.location.href = 'index_bootstrap.html';
+    }
+  </script>
   <header class="topbar">
     <div class="container nav" role="navigation" aria-label="Navegação principal">
       <a class="brand" href="index_bootstrap.html">
@@ -38,7 +43,15 @@
     <section class="card" aria-labelledby="user-ttl">
       <header class="card__hdr"><h2 id="user-ttl" class="card__title m-0">Usuário</h2></header>
       <div class="card__body">
-        <p>Área do usuário em construção.</p>
+        <section class="mb-3">
+          <h3>Conta</h3>
+          <p>Informações da sua conta aparecerão aqui.</p>
+        </section>
+        <section>
+          <h3>Personagens</h3>
+          <p>Detalhes dos seus personagens aparecerão aqui.</p>
+        </section>
+        <button class="btn btn--secondary mt-3" type="button" onclick="localStorage.removeItem('loggedIn'); window.location.href='index_bootstrap.html';">Sair</button>
       </div>
     </section>
   </main>
