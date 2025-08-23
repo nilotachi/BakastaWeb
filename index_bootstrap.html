@@ -75,9 +75,42 @@
 
   <!-- Hero -->
   <section id="home" class="hero d-flex align-items-center">
-    <div class="container text-center py-4">
-      <h1 class="display-4 fw-bold">Bakasta Mu <span class="small d-block">Servidor Semi-Hard</span></h1>
+    <div class="hero-background"></div>
+    <div class="container-fluid position-relative">
+      <div class="row align-items-center min-vh-75">
+        <!-- Lado izquierdo: Logo y ambiente -->
+        <div class="col-lg-6 hero-left">
+          <div class="hero-character">
+            <img src="img/logo.png" alt="Logo Bakasta Mu" class="hero-logo" />
+          </div>
+        </div>
+        
+        <!-- Lado derecho: Panel de información -->
+        <div class="col-lg-6 hero-right">
+          <div class="hero-info-panel">
+            <!-- Jugadores en línea -->
+            <div class="online-players">
+              <span class="online-label">JUGADORES EN LÍNEA</span>
+              <div class="online-indicator">
+                <div class="online-dot"></div>
+                <span class="online-count">831</span>
+              </div>
+            </div>
+            
+            <!-- Call to action principal -->
+            <h1 class="hero-title">ÚNETE A LA BATALLA</h1>
+            <p class="hero-subtitle">¡TE ESPERAMOS!</p>
+            
+            <!-- Botón de descarga -->
+            <a href="downloads.html" class="download-btn">
+              <span>DESCARGAR</span>
+              <i class="download-arrow">↓</i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  
   </section>
 
   <!-- Aviso geral -->
@@ -160,32 +193,54 @@
 
           <div class="card flex-fill glow">
             <div class="card-header">
-              <h2 class="card-title m-0">Informações</h2>
+              <h2 class="card-title m-0">INFO</h2>
+              <small class="text-muted">Estadísticas generales</small>
             </div>
-            <div class="card-body d-grid gap-2">
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Versão</span>
-                <span class="badge bg-secondary">97d+99i</span>
+            <div class="card-body d-grid gap-3">
+              <!-- Servidor Status -->
+              <div class="server-status">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold">Servidor</span>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="server-indicator online"></div>
+                    <span class="text-success fw-bold">ON</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 83.1%" aria-valuenow="831" aria-valuemin="0" aria-valuemax="1000"></div>
+                  </div>
+                  <div class="progress-text">
+                    <span class="text-success fw-bold">831</span> / <span>1,000</span>
+                  </div>
+                </div>
               </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Experiência</span>
-                <span class="badge bg-secondary">100x</span>
+
+              <!-- Cuentas Creadas -->
+              <div class="stat-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>Cuentas Creadas</span>
+                  <span class="fw-bold">3.838</span>
+                </div>
+                <div class="stat-bar"></div>
               </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Drop</span>
-                <span class="badge bg-secondary">30%</span>
+
+              <!-- Personajes Creados -->
+              <div class="stat-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>Personajes Creados</span>
+                  <span class="fw-bold">4.499</span>
+                </div>
+                <div class="stat-bar"></div>
               </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Total de Contas</span>
-                <span class="badge bg-secondary">89</span>
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Total de Personagens</span>
-                <span class="badge bg-secondary">21</span>
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <span>Total de Guilds</span>
-                <span class="badge bg-secondary">5</span>
+
+              <!-- Guilds Creados -->
+              <div class="stat-item">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>Guilds Creados</span>
+                  <span class="fw-bold">44</span>
+                </div>
+                <div class="stat-bar"></div>
               </div>
             </div>
           </div>
