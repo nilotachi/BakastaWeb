@@ -167,6 +167,21 @@ body {
   overflow: hidden;
 }
 
+/* Hero compacto para páginas de contenido */
+.hero.compact {
+  min-height: 25vh;
+  padding: 2rem 0;
+}
+
+.hero.compact .display-4 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero.compact .container {
+  padding: 1rem 0;
+}
+
 /* Clase para aplicar difuminado sutil a fondos */
 .hero-blur-bg {
   filter: blur(1px);
