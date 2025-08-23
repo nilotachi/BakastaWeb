@@ -129,22 +129,37 @@
           <div class="card-body">
             <div class="news">
               <article class="news__item">
-                <div class="d-flex gap-3">
-                  <div class="news__icon">★</div>
-                  <div>
-                    <h3 class="news__title">Bem-vindos ao Bakasta Mu</h3>
-                    <div class="news__meta">Postado por <strong>Admin</strong> em 18/07/2025 04:53</div>
-                    <p class="news__excerpt">Layout limpo e responsivo. Conteúdo dinâmico virá do backend.</p>
+                <div class="news__header">
+                  <div class="news__icon">📢</div>
+                  <div class="news__meta">
+                    <span class="news__author">Admin</span>
+                    <span class="news__date">18/07/2025 04:53</span>
+                  </div>
+                </div>
+                <div class="news__content">
+                  <h3 class="news__title">Bem-vindos ao Bakasta Mu</h3>
+                  <p class="news__excerpt">Layout limpo e responsivo. Conteúdo dinâmico virá do backend.</p>
+                  <div class="news__tags">
+                    <span class="news__tag">Novidade</span>
+                    <span class="news__tag">Servidor</span>
                   </div>
                 </div>
               </article>
+              
               <article class="news__item">
-                <div class="d-flex gap-3">
-                  <div class="news__icon">★</div>
-                  <div>
-                    <h3 class="news__title">Eventos em ciclos</h3>
-                    <div class="news__meta">Postado por <strong>Admin</strong> em 03/09/2025 19:21</div>
-                    <p class="news__excerpt">Estrutura pronta para countdown com horários e intervalos.</p>
+                <div class="news__header">
+                  <div class="news__icon">⚔️</div>
+                  <div class="news__meta">
+                    <span class="news__author">Admin</span>
+                    <span class="news__date">03/09/2025 19:21</span>
+                  </div>
+                </div>
+                <div class="news__content">
+                  <h3 class="news__title">Eventos em ciclos</h3>
+                  <p class="news__excerpt">Estrutura pronta para countdown com horários e intervalos.</p>
+                  <div class="news__tags">
+                    <span class="news__tag">Eventos</span>
+                    <span class="news__tag">Sistema</span>
                   </div>
                 </div>
               </article>
@@ -174,7 +189,12 @@
                   <button class="btn btn-primary" type="button" id="loginBtn">Entrar</button>
                   <button class="btn btn-secondary" type="button">Cadastrar</button>
                 </div>
-                <p class="hint">⚠️ Ilustrativo. Ao implementar, use HTTPS, CSRF, rate limit e hashing forte (Argon2/BCrypt).</p>
+                <div class="forgot-password">
+                  <a href="#" class="forgot-link">
+                    <span class="forgot-icon">🔐</span>
+                    <span class="forgot-text">Forgot your password?</span>
+                  </a>
+                </div>
               </form>
             </div>
           </div>
