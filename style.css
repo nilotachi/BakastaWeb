@@ -592,6 +592,118 @@ body {
   color: var(--bakasta-gray-light);
 }
 
+/* ---------- Tabla de Rankings ---------- */
+.table-dark {
+  background-color: var(--bakasta-dark-gray);
+  color: var(--bakasta-gray-light);
+  margin: 0;
+}
+
+.table-dark th {
+  background-color: #6c757d;
+  color: #212529;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  border: none;
+}
+
+.table-dark td {
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  font-size: 0.9rem;
+}
+
+.table-dark tbody tr:hover {
+  background-color: rgba(105,174,126,.1);
+}
+
+.table-dark tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Botón de expansión */
+.btn-outline-secondary {
+  border-color: var(--bakasta-gray-light);
+  color: var(--bakasta-gray-light);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bakasta-gray-light);
+  color: var(--bakasta-black-green);
+  border-color: var(--bakasta-gray-light);
+}
+
+/* ---------- Logos de Guild ---------- */
+.guild-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+/* ---------- Lista de Eventos ---------- */
+.events-list {
+  padding: 1rem;
+}
+
+.event-item {
+  padding: 0.5rem 0;
+}
+
+.event-name {
+  font-weight: 700;
+  color: var(--bakasta-gray-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-time {
+  color: var(--bakasta-gray-light);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-countdown {
+  color: var(--bakasta-green-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.event-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Responsive para los 3 tops */
+@media (max-width: 991.98px) {
+  .col-md-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .event-name {
+    font-size: 0.85rem;
+  }
+  
+  .event-time {
+    font-size: 0.75rem;
+  }
+  
+  .event-countdown {
+    font-size: 0.7rem;
+  }
+}
+
 /* ---------- Personajes ---------- */
 .char-card {
   background-color: var(--bakasta-green-dark);
