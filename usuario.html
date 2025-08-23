@@ -171,36 +171,43 @@
           <h2 class="card-title m-0">Informações da Conta</h2>
         </div>
         <div class="card-body">
-          <ul class="list-unstyled d-grid gap-3">
-            <li class="d-flex flex-wrap gap-3">
-              <strong class="text-secondary" style="min-width: 120px;">Criação:</strong>
-              <span>16/11/2017</span>
-            </li>
-            <li class="d-flex flex-wrap gap-3">
-              <strong class="text-secondary" style="min-width: 120px;">Email:</strong>
-              <span>g****@hotmail.com</span>
-            </li>
-            <li class="d-flex flex-wrap gap-3">
-              <strong class="text-secondary" style="min-width: 120px;">Último login:</strong>
-              <span>25/05/2023 18:45 — personagem Elfisio</span>
-            </li>
-            <li class="d-flex flex-wrap gap-3">
-              <strong class="text-secondary" style="min-width: 120px;">Zen no site:</strong>
-              <span>4.700.000</span>
-            </li>
-          </ul>
-
-          <section id="senha" class="mt-4">
-            <h3>Resetar Senha</h3>
-            <form class="d-grid gap-3" action="#" method="post" autocomplete="off" novalidate>
-              <div>
-                <label class="form-label">Nova Senha</label>
-                <input class="form-control" type="password" placeholder="Nova senha" />
+          <div class="account-info">
+            <div class="account-item">
+              <div class="account-label">Account Status:</div>
+              <div class="account-value">
+                <span class="status-badge status-active">Active</span>
               </div>
-              <button class="btn btn-primary" type="button">Resetar Senha</button>
-            </form>
-          </section>
-          <button class="btn btn-logout mt-3" type="button"
+            </div>
+            
+            <div class="account-item">
+              <div class="account-label">Username:</div>
+              <div class="account-value">sbagomez</div>
+            </div>
+            
+            <div class="account-item">
+              <div class="account-label">Email Address:</div>
+              <div class="account-value">
+                <button class="btn btn-change">change</button>
+              </div>
+            </div>
+            
+            <div class="account-item">
+              <div class="account-label">Password:</div>
+              <div class="account-value">
+                <span class="password-dots">••••••••</span>
+                <button class="btn btn-change">change</button>
+              </div>
+            </div>
+            
+            <div class="account-item">
+              <div class="account-label">Online Status:</div>
+              <div class="account-value">
+                <span class="status-badge status-offline">Offline</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-logout mt-4" type="button"
             onclick="localStorage.removeItem('loggedIn'); window.location.href='index_bootstrap.html';">Sair</button>
         </div>
       </div>
