@@ -5,65 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bakasta Mu — Ajuda</title>
   <meta name="description" content="Ajuda do Bakasta Mu." />
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- Tema personalizado -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
-    <div class="container nav" role="navigation" aria-label="Navegação principal">
-      <a class="brand" href="index_bootstrap.html">
-        <span class="brand__badge">
-          <img src="img/logo.png" alt="Logo Bakasta Mu" />
-        </span>
-        <span>Bakasta <span class="muted">Mu</span></span>
-      </a>
-      <!-- Botão hamburguesa para mobile -->
-      <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <!-- Menu de navegação -->
-      <nav class="menu" id="mainMenu" aria-label="Menu">
-        <a href="index_bootstrap.html#home">Início</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="index_bootstrap.html#eventos">Eventos</a>
-        <div class="dropdown" id="userMenu">
-          <a href="#" class="dropdown-toggle">Usuário</a>
-          <div class="dropdown-menu">
-            <a href="usuario.html">Minha Conta</a>
-            <a href="usuario.html#senha">Mudar Senha</a>
-            <a href="#" id="logoutLink">Sair</a>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand brand" href="index_bootstrap.html">
+          <span class="brand__badge">
+            <img src="img/logo.png" alt="Logo Bakasta Mu" />
+          </span>
+          <span>Bakasta <span class="text-secondary">Mu</span></span>
+        </a>
+        
+        <!-- Botão hamburguesa para mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Menu de navegação -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_bootstrap.html#home">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index_bootstrap.html#eventos">Eventos</a>
+            </li>
+            <li class="nav-item dropdown" id="userMenu" style="display: none;">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Usuário
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="usuario.html">Minha Conta</a></li>
+                <li><a class="dropdown-item" href="usuario.html#senha">Mudar Senha</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="logoutLink">Sair</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Informações
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="info.html">Informações Gerais</a></li>
+                <li><a class="dropdown-item" href="index_bootstrap.html#ranking">Ranking</a></li>
+                <li><a class="dropdown-item active" href="ajuda.html">Ajuda</a></li>
+                <li><a class="dropdown-item" href="regras.html">Regras</a></li>
+                <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doacoes.html">Doações</a>
+            </li>
+          </ul>
         </div>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">Informações</a>
-          <div class="dropdown-menu">
-            <a href="info.html">Informações Gerais</a>
-            <a href="index_bootstrap.html#ranking">Ranking</a>
-            <a href="ajuda.html">Ajuda</a>
-            <a href="regras.html">Regras</a>
-            <a href="contato.html">Contato</a>
-            <a href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a>
-          </div>
-        </div>
-        <a href="doacoes.html">Doações</a>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero d-flex align-items-center">
     <div class="container text-center py-4">
-      <h1>Ajuda</h1>
+      <h1 class="display-4 fw-bold">Ajuda</h1>
     </div>
   </section>
 
   <main class="container my-4">
-    <section class="card" aria-labelledby="ajuda-ttl">
-      <header class="card__hdr"><h2 id="ajuda-ttl" class="card__title m-0">Ajuda</h2></header>
-      <div class="card__body">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title m-0">Ajuda</h2>
+      </div>
+      <div class="card-body">
         <p>Conteúdo de ajuda em breve.</p>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>
@@ -72,91 +95,10 @@
       <p class="mt-3">Layout leve. Substitua textos e números por conteúdo dinâmico quando integrar ao backend.</p>
     </div>
   </footer>
-  <script>
-    const userMenu = document.getElementById('userMenu');
-    const logoutLink = document.getElementById('logoutLink');
-    if (localStorage.getItem('loggedIn')) {
-      userMenu?.style.display = 'block';
-      logoutLink?.addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('loggedIn');
-        window.location.href = 'index_bootstrap.html';
-      });
-    } else {
-      userMenu?.remove();
-    }
-  </script>
-  
-  <!-- ===== SISTEMA DE MENÚ COMPLETAMENTE RENOVADO ===== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menuToggle');
-      const mainMenu = document.getElementById('mainMenu');
-      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-      
-      // ===== TOGGLE DEL MENÚ HAMBURGUESA =====
-      menuToggle.addEventListener('click', function() {
-        mainMenu.classList.toggle('show');
-        
-        // Cambia el ícono del botón
-        const icon = this.querySelector('.navbar-toggler-icon');
-        if (mainMenu.classList.contains('show')) {
-          icon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(204, 213, 207, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3e%3c/svg%3e\")";
-        } else {
-          icon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(204, 213, 207, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
-        }
-      });
-      
-      // ===== SISTEMA DE DROPDOWNS =====
-      dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          const dropdown = this.closest('.dropdown');
-          const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-          
-          // Cierra otros dropdowns abiertos
-          document.querySelectorAll('.dropdown.show').forEach(openDropdown => {
-            if (openDropdown !== dropdown) {
-              openDropdown.classList.remove('show');
-            }
-          });
-          
-          // Toggle del dropdown actual
-          dropdown.classList.toggle('show');
-        });
-      });
-      
-      // ===== CERRAR MENÚ AL HACER CLIC FUERA =====
-      document.addEventListener('click', function(e) {
-        // Si no es el botón del menú ni está dentro del menú
-        if (!e.target.closest('#mainMenu') && !e.target.closest('#menuToggle')) {
-          mainMenu.classList.remove('show');
-          
-          // Restaura el ícono del botón
-          const icon = menuToggle.querySelector('.navbar-toggler-icon');
-          icon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(204, 213, 207, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
-          
-          // Cierra todos los dropdowns
-          document.querySelectorAll('.dropdown.show').forEach(dropdown => {
-            dropdown.classList.remove('show');
-          });
-        }
-      });
-      
-      // ===== CERRAR MENÚ AL REDIMENSIONAR A DESKTOP =====
-      window.addEventListener('resize', function() {
-        if (window.innerWidth >= 992) {
-          mainMenu.classList.remove('show');
-          const icon = menuToggle.querySelector('.navbar-toggler-icon');
-          icon.style.backgroundImage = "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(204, 213, 207, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")";
-        }
-      });
-    });
-  </script>
-  
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
 </body>
 </html>
 
