@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bakasta Mu — Registro</title>
+  <meta name="description" content="Registro de nova conta no Bakasta Mu." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .modern-input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    
+    .modern-input-group .form-control {
+      border: 2px solid var(--bakasta-green-dark);
+      border-radius: 12px;
+      padding: 1rem 1rem 1rem 3rem;
+      font-size: 1rem;
+      background: var(--bakasta-black-green);
+      color: var(--bakasta-gray-light);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .modern-input-group .form-control:focus {
+      border-color: var(--bakasta-green-light);
+      box-shadow: 0 0 0 0.2rem rgba(105, 174, 126, 0.25);
+      background: var(--bakasta-dark-gray);
+      transform: translateY(-2px);
+    }
+    
+    .modern-input-group .form-control::placeholder {
+      color: var(--bakasta-gray-light);
+      opacity: 0.7;
+    }
+    
+    .modern-input-group .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bakasta-green-light);
+      transition: color 0.3s ease;
+    }
+    
+    .modern-input-group .form-control:focus + .input-icon {
+      color: var(--bakasta-green-light);
+    }
+    
+    .modern-input-group .form-label {
+      color: var(--bakasta-green-light);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .modern-input-group .form-text {
+      color: var(--bakasta-gray-light);
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--bakasta-green);
+      background: rgba(54, 134, 75, 0.1);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0 6px 6px 0;
+    }
+    
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--bakasta-green-light);
+      cursor: pointer;
+      padding: 0.25rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .password-toggle:hover {
+      color: var(--bakasta-green);
+      background: rgba(105, 174, 126, 0.1);
+    }
+    
+    .btn-register-modern {
+      background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+      border: none;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(54, 134, 75, 0.4);
+      color: var(--bakasta-black-green);
+    }
+    
+    .btn-register-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(54, 134, 75, 0.5);
+      background: linear-gradient(135deg, var(--bakasta-green-light), var(--bakasta-green));
+    }
+    
+    .btn-register-modern:active {
+      transform: translateY(0);
+    }
+    
+    .terms-section {
+      background: rgba(54, 134, 75, 0.1);
+      border: 1px solid rgba(54, 134, 75, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .terms-section .form-check {
+      margin-bottom: 0.75rem;
+    }
+    
+    .terms-section .form-check-input:checked {
+      background-color: var(--bakasta-green);
+      border-color: var(--bakasta-green);
+    }
+    
+    .terms-section .form-check-input:focus {
+      box-shadow: 0 0 0 0.2rem rgba(54, 134, 75, 0.25);
+    }
+    
+    .terms-section .form-check-label {
+      color: var(--bakasta-gray-light);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    .terms-section .form-check-label a {
+      color: var(--bakasta-green-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .terms-section .form-check-label a:hover {
+      text-decoration: underline;
+      color: var(--bakasta-green);
+    }
+    
+    .login-link-modern {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--bakasta-green-dark);
+    }
+    
+    .login-link-modern a {
+      color: var(--bakasta-green-light);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .login-link-modern a:hover {
+      color: var(--bakasta-green);
+      text-decoration: underline;
+    }
+    
+    .card-modern {
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      background: var(--bakasta-black-green);
+    }
+    
+    .card-modern .card-header {
+      background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+      color: var(--bakasta-black-green);
+      border: none;
+      padding: 1.5rem 2rem;
+    }
+    
+    .card-modern .card-header h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    .card-modern .card-body {
+      padding: 2rem;
+      background: var(--bakasta-black-green);
+    }
+    
+    @media (max-width: 768px) {
+      .card-modern .card-body {
+        padding: 1.5rem;
+      }
+      
+      .card-modern .card-header {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand brand" href="index_bootstrap.html">
+          <span class="brand__badge">
+            <img src="img/logov1.png" alt="Logo Bakasta Mu" />
+          </span>
+          <span>Bakasta <span class="text-secondary">Mu</span></span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index_bootstrap.html#home">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="downloads.html">Downloads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index_bootstrap.html#ranking">Rankings</a>
+            </li>
+            <li class="nav-item dropdown" id="userMenu" style="display: none;">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Usuário
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="usuario.html">Minha Conta</a></li>
+                <li><a class="dropdown-item" href="usuario.html#senha">Mudar Senha</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#" id="logoutLink">Sair</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Informações
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="info.html">Informações Gerais</a></li>
+                <li><a class="dropdown-item" href="index_bootstrap.html#ranking">Ranking</a></li>
+                <li><a class="dropdown-item" href="ajuda.html">Ajuda</a></li>
+                <li><a class="dropdown-item" href="regras.html">Regras</a></li>
+                <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="doacoes.html">Doações</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero compact d-flex align-items-center">
+    <div class="container text-center py-4">
+      <h1 class="display-4 fw-bold">Registro</h1>
+    </div>
+  </section>
+
+  <main class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="card card-modern">
+          <div class="card-header">
+            <h2>Registrar Nova Conta</h2>
+          </div>
+          <div class="card-body">
+            <form class="registration-form" action="#" method="post" autocomplete="off" novalidate>
+              <div class="modern-input-group">
+                <label for="username" class="form-label">Usuário:</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control" id="username" name="username" 
+                         placeholder="Digite seu usuário" required>
+                  <div class="input-icon">👤</div>
+                </div>
+                <div class="form-text">4 a 10 caracteres alfanuméricos</div>
+              </div>
+
+              <div class="modern-input-group">
+                <label for="password" class="form-label">Senha:</label>
+                <div class="position-relative">
+                  <input type="password" class="form-control" id="password" name="password" 
+                         placeholder="Digite sua senha" required>
+                  <div class="input-icon">🔒</div>
+                  <button type="button" class="password-toggle" onclick="togglePassword('password')">👁️</button>
+                </div>
+                <div class="form-text">4 a 20 caracteres</div>
+              </div>
+
+              <div class="modern-input-group">
+                <label for="confirmPassword" class="form-label">Confirmar Senha:</label>
+                <div class="position-relative">
+                  <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
+                         placeholder="Digite novamente sua senha" required>
+                  <div class="input-icon">🔒</div>
+                  <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                </div>
+              </div>
+
+              <div class="modern-input-group">
+                <label for="email" class="form-label">Endereço de Email:</label>
+                <div class="position-relative">
+                  <input type="email" class="form-control" id="email" name="email" 
+                         placeholder="Digite seu email" required>
+                  <div class="input-icon">📧</div>
+                </div>
+                <div class="form-text">Por favor, use um endereço de email válido</div>
+              </div>
+
+              <div class="terms-section">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required>
+                  <label class="form-check-label" for="terms">
+                    Ao se registrar, você concorda com nossos 
+                    <a href="regras.html">Termos de Serviço</a> e 
+                    <a href="regras.html">Política de Privacidade</a>.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="emailAccess" required>
+                  <label class="form-check-label" for="emailAccess">
+                    Entendo que não poderei solicitar suporte se perder acesso ao email.
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="responsibility" required>
+                  <label class="form-check-label" for="responsibility">
+                    Assumo toda responsabilidade pela conduta dos personagens desta conta.
+                  </label>
+                </div>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-register-modern">
+                  Criar Conta
+                </button>
+              </div>
+            </form>
+
+            <div class="login-link-modern">
+              <small class="text-muted">
+                Já tem uma conta? 
+                <a href="index_bootstrap.html">Faça login</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer__brand">
+              <div class="footer__logo">
+                <img src="img/logov1.png" alt="Bakasta Mu" />
+              </div>
+              <h3 class="footer__title">Bakasta Mu</h3>
+              <p class="footer__description">Servidor privado de Mu Online con la mejor experiencia de juego y comunidad
+                activa.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__section">
+              <h4 class="footer__section-title">Juego</h4>
+              <ul class="footer__links">
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="info.html">Informações</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="regras.html">Regras</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__section">
+              <h4 class="footer__section-title">Comunidade</h4>
+              <ul class="footer__links">
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a></li>
+                <li><a href="usuario.html">Minha Conta</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="footer__section">
+              <h4 class="footer__section-title">Estatísticas</h4>
+              <div class="footer__stats">
+                <div class="footer__stat">
+                  <span class="footer__stat-number">831</span>
+                  <span class="footer__stat-label">Online</span>
+                </div>
+                <div class="footer__stat">
+                  <span class="footer__stat-number">3.8k</span>
+                  <span class="footer__stat-label">Contas</span>
+                </div>
+                <div class="footer__stat">
+                  <span class="footer__stat-number">4.5k</span>
+                  <span class="footer__stat-label">Personagens</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__divider"></div>
+
+        <div class="footer__bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="footer__copyright">
+                © <span id="y">2025</span> Bakasta Mu. Fan project sem vínculo com Webzen — marcas são de seus
+                respectivos donos.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer__social">
+                <a href="https://discord.gg/k6fRn8wX" target="_blank" class="footer__social-link">
+                  <i class="footer__social-icon">🎮</i>
+                </a>
+                <a href="#" class="footer__social-link">
+                  <i class="footer__social-icon">📸</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    // Password visibility toggle
+    function togglePassword(inputId) {
+      const input = document.getElementById(inputId);
+      const button = input.nextElementSibling.nextElementSibling;
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        button.textContent = '🙈';
+      } else {
+        input.type = 'password';
+        button.textContent = '👁️';
+      }
+    }
+    
+    // Form validation
+    document.querySelector('.registration-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const email = document.getElementById('email').value;
+      const terms = document.getElementById('terms').checked;
+      const emailAccess = document.getElementById('emailAccess').checked;
+      const responsibility = document.getElementById('responsibility').checked;
+      
+      // Basic validation
+      if (username.length < 4 || username.length > 10) {
+        alert('O usuário deve ter entre 4 e 10 caracteres.');
+        return;
+      }
+      
+      if (password.length < 4 || password.length > 20) {
+        alert('A senha deve ter entre 4 e 20 caracteres.');
+        return;
+      }
+      
+      if (password !== confirmPassword) {
+        alert('As senhas não coincidem.');
+        return;
+      }
+      
+      if (!email.includes('@') || !email.includes('.')) {
+        alert('Por favor, insira um email válido.');
+        return;
+      }
+      
+      if (!terms || !emailAccess || !responsibility) {
+        alert('Você deve aceitar todos os termos para continuar.');
+        return;
+      }
+      
+      // If validation passes, you can submit the form
+      alert('Conta criada com sucesso!');
+      // Here you would typically send the data to your backend
+    });
+  </script>
+</body>
+
+</html>
