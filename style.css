@@ -9,17 +9,19 @@
   --bakasta-green: #36864B;
   --bakasta-gray-light: #CCD5CF;
   --bakasta-green-dark: #28382C;
+  --bakasta-black-font-green: #212421;
   
   /* Bootstrap overrides */
   --bs-primary: var(--bakasta-green);
   --bs-secondary: var(--bakasta-green-light);
   --bs-dark: var(--bakasta-black-green);
+  --bs-dark-font: var(--bakasta-black-font-green);
   --bs-light: var(--bakasta-gray-light);
 }
 
 /* Base & Header */
 body {
-  background-color: var(--bakasta-black-green);
+  background-color: var(--bs-dark-font);
   color: var(--bakasta-gray-light);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
@@ -507,26 +509,31 @@ body {
 }
 
 .hero-info-panel {
-  background: rgba(17, 19, 17, 0.9);
-  border: 2px solid var(--bakasta-green-dark);
   border-radius: 15px;
   padding: 3rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   max-width: 400px;
 }
 
 .online-players {
+  background: rgba(17, 19, 17, 0.4);
+  border: 1px solid var(--bakasta-green-dark);
+  border-radius: 15px;
+  padding: 0.75rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .online-label {
-  display: block;
+  display: inline;
   color: var(--bakasta-gray-light);
   font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -556,7 +563,7 @@ body {
 
 .hero-title {
   color: white;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -566,8 +573,8 @@ body {
 
 .hero-subtitle {
   color: var(--bakasta-gray-light);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 900;
   margin-bottom: 2rem;
   text-shadow: 0 0 10px rgba(204, 213, 207, 0.3);
 }
@@ -1331,10 +1338,9 @@ body {
     min-height: 300px;
   }
   
-  .hero-left { order: 2; }
+  .hero-left { order: 1; }
   .hero-right { 
-    order: 1; 
-    margin-bottom: 2rem; 
+    order: 2; 
   }
   
   .hero-title {
@@ -1354,8 +1360,8 @@ body {
   }
   
   .hero-logo {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
   
   .online-count {
