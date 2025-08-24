@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bakasta Mu — Portal</title>
   <meta name="description" content="Portal do servidor Bakasta Mu — notícias, eventos e rankings." />
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Tema personalizado -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Header -->
   <header class="topbar">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
@@ -25,13 +21,11 @@
           <span>Bakasta <span class="text-secondary">Mu</span></span>
         </a>
 
-        <!-- Botón hamburguesa para mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menu de navegação -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -45,32 +39,24 @@
             </li>
             <li class="nav-item dropdown" id="userMenu" style="display: none;">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Usuário
-              </a>
+                aria-expanded="false">Usuário</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="usuario.html">Minha Conta</a></li>
                 <li><a class="dropdown-item" href="usuario.html#senha">Mudar Senha</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#" id="logoutLink">Sair</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Informações
-              </a>
+                aria-expanded="false">Informações</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="info.html">Informações Gerais</a></li>
                 <li><a class="dropdown-item" href="index_bootstrap.html#ranking">Ranking</a></li>
                 <li><a class="dropdown-item" href="ajuda.html">Ajuda</a></li>
                 <li><a class="dropdown-item" href="regras.html">Regras</a></li>
                 <li><a class="dropdown-item" href="contato.html">Contato</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
+                <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a></li>
               </ul>
             </li>
@@ -83,19 +69,16 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="hero d-flex align-items-center">
     <div class="hero-background"></div>
     <div class="container-fluid position-relative">
       <div class="row align-items-center min-vh-75">
-        <!-- Lado izquierdo: Logo y ambiente -->
         <div class="col-lg-6 hero-left">
           <div class="hero-character">
             <img src="img/logo.png" alt="Logo Bakasta Mu" class="hero-logo" />
           </div>
         </div>
 
-        <!-- Lado derecho: Panel de información -->
         <div class="col-lg-6 hero-right">
           <div class="hero-info-panel">
             <!-- Jugadores en línea -->
@@ -123,13 +106,10 @@
 
   </section>
 
-  <!-- Aviso geral -->
   <div class="announce">Servidor em BETA — explore, reporte e divirta-se! ⚔️</div>
 
   <main class="container my-4">
-    <!-- ROW 1: Notícias (esq) | Painel + Informações (dir) -->
     <div class="row g-4 align-items-stretch">
-      <!-- Esquerda -->
       <div class="col-lg-8">
         <div class="card h-100">
           <div class="card-header d-flex justify-content-between align-items-center">
@@ -178,7 +158,6 @@
         </div>
       </div>
 
-      <!-- Direita: stack -->
       <div class="col-lg-4">
         <div class="d-flex flex-column gap-3 h-100">
           <div id="loginSection" class="card">
@@ -283,7 +262,6 @@
                   </div>
                 </div>
 
-                <!-- Guilds Creados -->
                 <div class="col-12">
                   <div class="stat-card stat-card-guilds">
                     <div class="stat-card__icon">
@@ -305,11 +283,9 @@
       </div>
     </div>
 
-    <!-- ROW 2: Rankings (completo) -->
     <div class="row g-4 align-items-stretch mt-1">
       <div class="col-12">
         <div class="row g-3 h-100">
-          <!-- Top Level -->
           <div class="col-md-4">
             <div class="card h-100">
               <div class="card-header d-flex justify-content-between align-items-center">
@@ -523,7 +499,6 @@
     <div class="footer__content">
       <div class="container">
         <div class="row g-4">
-          <!-- Logo y descripción -->
           <div class="col-lg-4">
             <div class="footer__brand">
               <div class="footer__logo">
@@ -535,7 +510,6 @@
             </div>
           </div>
 
-          <!-- Enlaces rápidos -->
           <div class="col-lg-2 col-md-6">
             <div class="footer__section">
               <h4 class="footer__section-title">Juego</h4>
@@ -548,7 +522,6 @@
             </div>
           </div>
 
-          <!-- Comunidad -->
           <div class="col-lg-2 col-md-6">
             <div class="footer__section">
               <h4 class="footer__section-title">Comunidade</h4>
@@ -561,7 +534,6 @@
             </div>
           </div>
 
-          <!-- Estadísticas -->
           <div class="col-lg-4">
             <div class="footer__section">
               <h4 class="footer__section-title">Estatísticas</h4>
@@ -583,10 +555,8 @@
           </div>
         </div>
 
-        <!-- Línea divisoria -->
         <div class="footer__divider"></div>
 
-        <!-- Copyright y redes sociales -->
         <div class="footer__bottom">
           <div class="row align-items-center">
             <div class="col-md-6">
@@ -611,7 +581,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/common.js"></script>
 </body>
