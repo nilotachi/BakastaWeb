@@ -363,23 +363,6 @@ body {
   color: white;
 }
 
-.hero-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem 0;
-  border-top: 1px solid var(--bakasta-green-dark);
-  z-index: 3;
-}
-
-.hero-footer-text {
-  color: var(--bakasta-gray-light);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.2); opacity: 0.8; }
@@ -1270,14 +1253,6 @@ body {
     font-size: 0.9rem;
   }
   
-  .hero-footer {
-    padding: 0.75rem 0;
-  }
-  
-  .hero-footer-text {
-    font-size: 0.75rem;
-  }
-  
   /* Cards responsive */
   .card {
     margin-bottom: 1rem;
@@ -1360,11 +1335,6 @@ body {
   .hero-left,
   .hero-right {
     min-height: 250px;
-  }
-  
-  .hero-gate {
-    width: 140px;
-    height: 90px;
   }
   
   .navbar-collapse {
