@@ -57,6 +57,205 @@ body {
   border-radius: 4px;
 }
 
+/* Rankings page styles */
+.rankings-page .rankings-main-card {
+  background: var(--bakasta-black-green);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--bakasta-green-dark);
+}
+
+.rankings-page .rankings-tabs {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.rankings-page .nav-tabs {
+  border: none;
+  gap: 0.5rem;
+}
+
+.rankings-page .nav-tabs .nav-link {
+  border: 2px solid var(--bakasta-green-dark);
+  border-radius: 8px;
+  color: var(--bakasta-gray-light);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  background-color: var(--bakasta-black-green);
+}
+
+.rankings-page .nav-tabs .nav-link:hover {
+  border-color: var(--bakasta-green);
+  color: var(--bakasta-green-light);
+  background-color: var(--bakasta-green-dark);
+}
+
+.rankings-page .nav-tabs .nav-link.active {
+  border-color: var(--bakasta-green);
+  color: #ffffff;
+  background-color: var(--bakasta-green);
+}
+
+/* Class filters */
+.rankings-page .class-filters {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.rankings-page .class-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--bakasta-dark-gray);
+  border: 2px solid var(--bakasta-green-dark);
+  color: var(--bakasta-gray-light);
+}
+
+.rankings-page .class-filter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: var(--bakasta-green);
+}
+
+.rankings-page .class-filter.active {
+  background-color: var(--bakasta-green);
+  border-color: var(--bakasta-green);
+  color: #ffffff;
+}
+
+.rankings-page .class-filter .class-icon {
+  font-size: 1.5rem;
+}
+
+.rankings-page .class-filter span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Rankings table */
+.rankings-page .rankings-table-container {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.rankings-page .rankings-table {
+  background-color: var(--bakasta-black-green) !important;
+  color: var(--bakasta-gray-light) !important;
+}
+
+.rankings-page .rankings-table th {
+  background-color: var(--bakasta-green-dark) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-bottom: none;
+  padding: 1rem 0.75rem;
+}
+
+.rankings-page .rankings-table td {
+  background-color: var(--bakasta-black-green) !important;
+  color: var(--bakasta-gray-light) !important;
+  border-color: var(--bakasta-green-dark);
+  padding: 1rem 0.75rem;
+  vertical-align: middle;
+}
+
+.rankings-page .rank-number {
+  font-weight: 700;
+  color: #dc3545 !important;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.rankings-page .country-flag {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  background-color: #dc3545;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 16px;
+  border-radius: 2px;
+}
+
+.rankings-page .status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+.rankings-page .status-dot.online {
+  background-color: #28a745;
+}
+
+.rankings-page .status-dot.offline {
+  background-color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rankings-page .rankings-main-card {
+    padding: 1.5rem;
+  }
+  
+  .rankings-page .class-filter {
+    width: 60px;
+    height: 60px;
+    padding: 0.75rem;
+  }
+  
+  .rankings-page .class-filter .class-icon {
+    font-size: 1.2rem;
+  }
+  
+  .rankings-page .class-filter span {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .rankings-page .rankings-main-card {
+    padding: 1rem;
+  }
+  
+  .rankings-page .rankings-tabs .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .rankings-page .class-filter {
+    width: 50px;
+    height: 50px;
+    padding: 0.5rem;
+  }
+  
+  .rankings-page .class-filter .class-icon {
+    font-size: 1rem;
+  }
+  
+  .rankings-page .class-filter span {
+    font-size: 0.6rem;
+  }
+}
+
 .topbar {
   background: linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.6));
   backdrop-filter: saturate(140%) blur(6px);
