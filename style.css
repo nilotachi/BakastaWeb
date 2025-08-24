@@ -5,7 +5,7 @@
 :root {
   --bakasta-dark-gray: #4B524D;
   --bakasta-green-light: #69AE7E;
-  --bakasta-black-green: #111311;
+  --bakasta-black-green: #282b28;
   --bakasta-green: #36864B;
   --bakasta-gray-light: #CCD5CF;
   --bakasta-green-dark: #28382C;
@@ -22,6 +22,39 @@ body {
   background-color: var(--bakasta-black-green);
   color: var(--bakasta-gray-light);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Info page table styles */
+.info-page .table {
+  background-color: #282B28 !important;
+  color: #ffffff !important;
+}
+
+.info-page .table td,
+.info-page .table th {
+  background-color: #282B28 !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+}
+
+.info-page .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.info-page .table-secondary {
+  background-color: var(--bakasta-green-dark) !important;
+  color: #ffffff !important;
+}
+
+.info-page .table strong {
+  color: #ffffff !important;
+}
+
+.info-page .table code {
+  color: var(--bakasta-green-light) !important;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .topbar {
@@ -1518,5 +1551,368 @@ body {
   
   .stat-card__label {
     font-size: 0.7rem;
+  }
+}
+
+/* ---------- Modern Registration Form Styles ---------- */
+.modern-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.modern-input-group .form-control {
+  border: 2px solid var(--bakasta-green-dark);
+  border-radius: 12px;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 1rem;
+  background: var(--bakasta-black-green);
+  color: var(--bakasta-gray-light);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.modern-input-group .form-control:focus {
+  border-color: var(--bakasta-green-light);
+  box-shadow: 0 0 0 0.2rem rgba(105, 174, 126, 0.25);
+  background: var(--bakasta-dark-gray);
+  transform: translateY(-2px);
+}
+
+.modern-input-group .form-control::placeholder {
+  color: var(--bakasta-gray-light);
+  opacity: 0.7;
+}
+
+.modern-input-group .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bakasta-green-light);
+  transition: color 0.3s ease;
+}
+
+.modern-input-group .form-control:focus + .input-icon {
+  color: var(--bakasta-green-light);
+}
+
+.modern-input-group .form-label {
+  color: var(--bakasta-green-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.modern-input-group .form-text {
+  color: var(--bakasta-gray-light);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--bakasta-green);
+  background: rgba(54, 134, 75, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--bakasta-green-light);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+  color: var(--bakasta-green);
+  background: rgba(105, 174, 126, 0.1);
+}
+
+.btn-register-modern {
+  background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(54, 134, 75, 0.4);
+  color: var(--bakasta-black-green);
+}
+
+.btn-register-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(54, 134, 75, 0.5);
+  background: linear-gradient(135deg, var(--bakasta-green-light), var(--bakasta-green));
+}
+
+.btn-register-modern:active {
+  transform: translateY(0);
+}
+
+.terms-section {
+  background: rgba(54, 134, 75, 0.1);
+  border: 1px solid rgba(54, 134, 75, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.terms-section .form-check {
+  margin-bottom: 0.75rem;
+}
+
+.terms-section .form-check-input:checked {
+  background-color: var(--bakasta-green);
+  border-color: var(--bakasta-green);
+}
+
+.terms-section .form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(54, 134, 75, 0.25);
+}
+
+.terms-section .form-check-label {
+  color: var(--bakasta-gray-light);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.terms-section .form-check-label a {
+  color: var(--bakasta-green-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-section .form-check-label a:hover {
+  text-decoration: underline;
+  color: var(--bakasta-green);
+}
+
+.login-link-modern {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bakasta-green-dark);
+}
+
+.login-link-modern a {
+  color: var(--bakasta-green-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link-modern a:hover {
+  color: var(--bakasta-green);
+  text-decoration: underline;
+}
+
+.card-modern {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: var(--bakasta-black-green);
+}
+
+.card-modern .card-header {
+  background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+  color: var(--bakasta-black-green);
+  border: none;
+  padding: 1.5rem 2rem;
+}
+
+.card-modern .card-header h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card-modern .card-body {
+  padding: 2rem;
+  background: var(--bakasta-black-green);
+}
+
+@media (max-width: 768px) {
+  .card-modern .card-body {
+    padding: 1.5rem;
+  }
+  
+  .card-modern .card-header {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* ---------- Modern Title Styles for All Modules ---------- */
+.page-title-modern {
+  background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+  color: var(--bakasta-black-green);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 20px rgba(54, 134, 75, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-title-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(0,0,0,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(0,0,0,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(0,0,0,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(0,0,0,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(0,0,0,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.page-title-modern .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-title-modern h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: -0.02em;
+}
+
+.page-title-modern .subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.page-title-modern .title-icon {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/* Card styles for module content */
+.module-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+  background: var(--bakasta-black-green);
+  margin-bottom: 2rem;
+}
+
+.module-card .card-header {
+  background: linear-gradient(135deg, var(--bakasta-green), var(--bakasta-green-light));
+  color: var(--bakasta-black-green);
+  border: none;
+  padding: 1.5rem 2rem;
+}
+
+.module-card .card-header h2,
+.module-card .card-header h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.module-card .card-body {
+  padding: 2rem;
+  background: var(--bakasta-black-green);
+  color: var(--bakasta-gray-light);
+}
+
+.module-card .card-body h4,
+.module-card .card-body h5 {
+  color: var(--bakasta-green-light);
+  margin-bottom: 1rem;
+}
+
+.module-card .card-body p {
+  color: var(--bakasta-gray-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.module-card .card-body ul,
+.module-card .card-body ol {
+  color: var(--bakasta-gray-light);
+  padding-left: 1.5rem;
+}
+
+.module-card .card-body li {
+  margin-bottom: 0.5rem;
+}
+
+.module-card .card-body a {
+  color: var(--bakasta-green-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.module-card .card-body a:hover {
+  color: var(--bakasta-green);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title-modern {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .page-title-modern h1 {
+    font-size: 2rem;
+  }
+  
+  .page-title-modern .subtitle {
+    font-size: 1rem;
+  }
+  
+  .page-title-modern .title-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+  }
+  
+  .module-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .module-card .card-header {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title-modern h1 {
+    font-size: 1.75rem;
+  }
+  
+  .page-title-modern .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .page-title-modern .title-icon {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
   }
 }

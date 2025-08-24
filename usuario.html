@@ -40,9 +40,6 @@
             <li class="nav-item">
               <a class="nav-link" href="downloads.html">Downloads</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index_bootstrap.html#ranking">Rankings</a>
-            </li>
             <li class="nav-item dropdown" id="userMenu">
               <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Usuário</a>
@@ -58,9 +55,6 @@
                 aria-expanded="false">Informações</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="info.html">Informações Gerais</a></li>
-                <li><a class="dropdown-item" href="index_bootstrap.html#ranking">Ranking</a></li>
-                <li><a class="dropdown-item" href="ajuda.html">Ajuda</a></li>
-                <li><a class="dropdown-item" href="regras.html">Regras</a></li>
                 <li><a class="dropdown-item" href="contato.html">Contato</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="https://discord.gg/k6fRn8wX" target="_blank">Discord</a></li>
@@ -75,17 +69,18 @@
     </nav>
   </header>
 
-  <section class="hero compact d-flex align-items-center">
-    <div class="container text-center py-4">
-      <h1 class="display-4 fw-bold">Minha Conta</h1>
+  <section class="page-title-modern">
+    <div class="container text-center">
+      <h1><span class="title-icon">👤</span>Minha Conta</h1>
+      <p class="subtitle">Gerencie seus personagens e informações da conta</p>
     </div>
   </section>
 
   <main class="container my-4">
     <div class="d-flex flex-column gap-4">
-      <div class="card">
+      <div class="module-card card">
         <div class="card-header">
-          <h2 class="card-title m-0">Personagens</h2>
+          <h2>Personagens</h2>
         </div>
         <div class="card-body">
           <div class="row g-3">
@@ -153,49 +148,54 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="module-card card">
         <div class="card-header">
-          <h2 class="card-title m-0">Informações da Conta</h2>
+          <h2>Informações da Conta</h2>
         </div>
         <div class="card-body">
           <div class="account-info">
             <div class="account-item">
-              <div class="account-label">Account Status:</div>
+              <span class="account-label">Usuário:</span>
+              <div class="account-value">
+                <span>Spray3D</span>
+              </div>
+            </div>
+            <div class="account-item">
+              <span class="account-label">Email:</span>
+              <div class="account-value">
+                <span>spray3d@example.com</span>
+                <button class="btn btn-change">Change</button>
+              </div>
+            </div>
+            <div class="account-item">
+              <span class="account-label">Status:</span>
               <div class="account-value">
                 <span class="status-badge status-active">Active</span>
               </div>
             </div>
-            
             <div class="account-item">
-              <div class="account-label">Username:</div>
-              <div class="account-value">sbagomez</div>
-            </div>
-            
-            <div class="account-item">
-              <div class="account-label">Email Address:</div>
+              <span class="account-label">Senha:</span>
               <div class="account-value">
-                <button class="btn btn-change">change</button>
+                <span>••••••••</span>
+                <button class="btn btn-change">Change</button>
               </div>
             </div>
-            
             <div class="account-item">
-              <div class="account-label">Password:</div>
+              <span class="account-label">Último Login:</span>
               <div class="account-value">
-                <span class="password-dots">••••••••</span>
-                <button class="btn btn-change">change</button>
+                <span>18/07/2025 04:53</span>
               </div>
             </div>
-            
             <div class="account-item">
-              <div class="account-label">Online Status:</div>
+              <span class="account-label">IP:</span>
               <div class="account-value">
-                <span class="status-badge status-offline">Offline</span>
+                <span>192.168.1.100</span>
               </div>
+            </div>
+            <div class="account-item">
+              <button class="btn btn-logout" id="logoutLink">Sair</button>
             </div>
           </div>
-
-          <button class="btn btn-logout mt-4" type="button"
-            onclick="localStorage.removeItem('loggedIn'); window.location.href='index_bootstrap.html';">Sair</button>
         </div>
       </div>
     </div>
@@ -222,8 +222,6 @@
               <ul class="footer__links">
                 <li><a href="downloads.html">Downloads</a></li>
                 <li><a href="info.html">Informações</a></li>
-                <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="regras.html">Regras</a></li>
               </ul>
             </div>
           </div>
