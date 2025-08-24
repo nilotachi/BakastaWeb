@@ -20,7 +20,7 @@ function handleUserAuth() {
         el.addEventListener('click', (e) => {
           e.preventDefault();
           localStorage.removeItem('loggedIn');
-          window.location.href = 'index_bootstrap.html';
+          window.location.href = 'index.html';
         });
       }
     });
@@ -111,7 +111,7 @@ function handleLogin() {
 // Función para verificar autenticación en páginas protegidas
 function requireAuth() {
   if (!localStorage.getItem('loggedIn')) {
-    window.location.href = 'index_bootstrap.html';
+    window.location.href = 'index.html';
   }
 }
 
